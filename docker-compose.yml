@@ -1,0 +1,12 @@
+services:
+  donor_service:
+    build: ./donor_service
+    ports:
+      - "5001:5001"
+
+  request_service:
+    build: ./request_service
+    ports:
+      - "5002:5002"
+    depends_on:
+      - donor_service
